@@ -1,38 +1,229 @@
+/* General App styling */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url('./assets/lp bg.jpg'); /* Background for the entire app */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Allows elements to stack naturally */
+  padding: 20px;
+  color: rgb(35, 3, 36);
+  
+  overflow-y: auto;
+}
+
+/* Heading styling */
+.heading {
+  margin-bottom: 50px;
+  margin-top: 50px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(111, 110, 110, 0.7); /* Transparent background */
+  color: #2e0354;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Search Bar styling */
+.search-bar-container {
+  position: relative;
+  top: -70px; /* Moves the search bar up by 10px */
+  margin-bottom: 20px; /* Ensures space remains below */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+}
+
+
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 800px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 15px;
+  background-color: #6a0dad;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.search-button:hover {
+  background-color: #580ea6;
 }
 
-@keyframes App-logo-spin {
+/* Music Player Container */
+.music-player-container {
+  position: relative; /* Allows manual positioning */
+  top: -100px; /* Moves the music container 20px upwards */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-player {
+  background-color: rgba(48, 3, 82, 0.8);
+  padding: 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.album-art {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: rotate 10s linear infinite; /* Smooth rotation */
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Track Details */
+.track-details {
+  text-align: center;
+}
+
+.track-details h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: rgb(234, 229, 231);
+}
+
+.track-details p {
+  margin: 5px 0;
+  color: rgb(254, 220, 255);
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Adds space between the control buttons */
+  margin-top: 20px;
+}
+
+.control-icon {
+  width: 25px; /* Adjust icon size */
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.control-icon:hover {
+  transform: scale(1.2); /* Enlarges icon on hover */
+}
+
+/* Progress Bar */
+.progress-bar {
+  margin-top: 20px; /* Space above the progress bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-range {
+  width: 100%; /* Ensures the range slider spans the container width */
+  max-width: 500px;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: #ddd; /* Light gray for progress background */
+  outline: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.progress-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(203, 255, 135); /* Thumb color */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.progress-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Increases thumb size on hover */
+}
+
+.progress-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28282e;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: #151c45;
+  transform: scale(1.05); /* Enlarges button slightly on hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Shrinks button when pressed */
+}
+
+button span {
+  z-index: 2;
+  position: relative;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(93, 82, 82, 0.3);
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1;
+}
+
+button:hover::before {
+  transform: scaleX(1); /* Animation effect on hover */
 }

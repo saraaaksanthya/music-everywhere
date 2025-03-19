@@ -1,0 +1,42 @@
+/* Songs list container */
+.songs-list-container {
+    margin: 20px;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #f9f9f9; /* Light background for better readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+  .songs-list-container h2 {
+    text-align: center;
+    color: #6a0dad; /* Purple heading */
+  }
+  
+  /* Table styling */
+  .songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #012245; /* Apply text color for the song list */
+  }
+  
+  .songs-table th {
+    background-color: #340258; /* Purple background for header */
+    color: white; /* White text for header */
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .songs-table td {
+    color: #20557a; /* Change color for song list items */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
+  }
+  
+  .songs-table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }
+  
